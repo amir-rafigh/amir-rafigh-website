@@ -249,12 +249,25 @@ section[id] {
 
 .hero-art {
   position: absolute;
-  inset-block-end: 0;
-  inset-inline-end: max(0px, (100% - 1390px) / 2);
-  width: min(50%, 620px);
-  mask-image: linear-gradient(to right, transparent, #000 7% 94%, transparent),
-    linear-gradient(to bottom, transparent, #000 8%);
-  mask-composite: intersect;
+  inset-block-start: 50%;
+  inset-inline-end: max(var(--gutter), (100% - var(--content-width)) / 2);
+  width: min(34%, 368px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: clamp(6px, 1.05vw, 13px) solid var(--accent);
+  border-radius: 50%;
+  background: var(--strip);
+  box-shadow: 0 8px 70px rgb(255 112 92 / 22%);
+  transform: translateY(-47%);
+}
+
+.hero-portrait {
+  /* Frame the subject on the right side of the source photo. */
+  position: absolute;
+  inset-block-start: -30%;
+  inset-inline-end: 0;
+  width: 194%;
+  max-width: none;
 }
 
 .technology-strip {
@@ -745,9 +758,11 @@ section[id] {
   }
 
   .hero-art {
-    position: static;
-    width: min(100%, 480px);
-    margin: 14px auto 0;
+    position: relative;
+    inset: auto;
+    width: min(72vw, 280px);
+    margin: 30px auto 25px;
+    transform: none;
   }
 
   .technology-list {

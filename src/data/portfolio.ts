@@ -23,10 +23,10 @@ export const profile = {
   role: "Software Engineer",
   bio: "I'm a Software Engineer passionate about designing and building scalable, efficient, and user-focused web applications, turning complex ideas into reliable digital solutions.",
   portrait: {
-    src: "/portfolio/jensen-omega.webp",
-    alt: "Jensen wearing glasses and a dark jacket in front of a coral ring",
-    width: 512,
-    height: 396,
+    src: "/photo_2026-11-11_00-16-20.jpg",
+    alt: "Amir Rafigh wearing sunglasses by the sea",
+    width: 1280,
+    height: 1138,
   } satisfies PortfolioImage,
   resumeUrl: "",
   email: "amir.rafigh.work@gmail.com",
@@ -64,25 +64,24 @@ export const statistics = [
 export const projects: Project[] = [
   {
     id: "battleship",
-    title: "Battleship",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js"],
+    title: "ROBOOLIFT",
+    technologies: ["node.js", "tailwind", "postgresSQL", "TypeScript", "next.js"],
     description:
       "Used components of JavaScript to implement basic data structures through the game of Battleship. Used a terminal to display ships and track where ships are hit or missed.",
     image: {
-      src: "/portfolio/battleship.webp",
-      alt: "Battleship terminal showing turns, hits, misses, and a sunk cruiser",
-      width: 373,
-      height: 184,
+      src: "/portfolio/roboolift-quick-design.webp",
+      alt: "RobooLift Quick Design interface with an isometric elevator shaft beside the project inputs",
+      width: 1376,
+      height: 769,
     },
     repositoryUrl: "",
-    demoUrl: "",
+    demoUrl: "https://roboolift.com",
   },
   {
     id: "movie-titles-api",
     title: "Movie Titles API",
     technologies: ["HTML", "CSS", "JavaScript", "API", "Version control"],
-    description:
-      "Uses a public movie API to build a collection of movie titles that sorts from A to Z or vice versa. It also counts the movies in each list and lets users save favorites in a separate list.",
+    description:      "ROBOOLIFT is a web platform that helps project teams plan elevators and request engineering services. Its visual previews and preliminary calculations show what can fit in the available shaft and help estimate cabin size, capacity, and clearance requirements. Teams can develop a detailed design for a new or partially built installation, order a cabin, or submit existing drawings for engineering review.",
     image: {
       src: "/portfolio/movie-titles-api.webp",
       alt: "The Godfather and Top Gun: Maverick in the movie collection",

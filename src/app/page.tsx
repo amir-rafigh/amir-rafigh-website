@@ -107,13 +107,15 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Image
-            {...profile.portrait}
-            className="hero-art"
-            fetchPriority="high"
-            loading="eager"
-            unoptimized
-          />
+          <div className="hero-art">
+            <Image
+              {...profile.portrait}
+              className="hero-portrait"
+              fetchPriority="high"
+              loading="eager"
+              unoptimized
+            />
+          </div>
         </section>
 
         <div className="technology-strip">
