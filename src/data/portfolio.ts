@@ -18,10 +18,10 @@ export type Project = {
 // Replace these values and the images in public/portfolio with your own.
 // Leave a URL empty to show a demo preview in its place.
 export const profile = {
-  name: "Jensen Omega",
-  firstName: "Jensen",
-  role: "Software Developer",
-  bio: "I started my software journey from photography. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development as it fulfills my love for learning and building things.",
+  name: "Amir Rafigh",
+  firstName: "Amir",
+  role: "Software Engineer",
+  bio: "I'm a Software Engineer passionate about designing and building scalable, efficient, and user-focused web applications, turning complex ideas into reliable digital solutions.",
   portrait: {
     src: "/portfolio/jensen-omega.webp",
     alt: "Jensen wearing glasses and a dark jacket in front of a coral ring",
@@ -29,19 +29,25 @@ export const profile = {
     height: 396,
   } satisfies PortfolioImage,
   resumeUrl: "",
-  email: "",
-  githubUrl: "",
-  linkedinUrl: "",
+  email: "amir.rafigh.work@gmail.com",
+  githubUrl: "https://github.com/amir-rafigh",
+  linkedinUrl: "https://www.linkedin.com/in/amir-rafigh-",
+  instagramUrl: "https://www.instagram.com/amir_rafigh_",
+  telegramUrl: "https://t.me/Amir_rafigh_01",
+  tel: "+989397804934",
 };
 
 export const technologies = [
-  "HTML5",
-  "CSS",
+  "Next.js",
+  "Tailwind",
   "JavaScript",
   "Node.js",
   "React",
   "Git",
   "GitHub",
+  "Docker",
+  "TypeScript",
+  "postgreSQL"
 ];
 
 export const services = [
@@ -51,9 +57,8 @@ export const services = [
 ] as const;
 
 export const statistics = [
-  { value: 120, suffix: "+", label: "Completed Projects" },
-  { value: 95, suffix: "%", label: "Client satisfaction" },
-  { value: 10, suffix: "+", label: "Years of experience" },
+  { value: 5, suffix: "+", label: "Completed Projects" },
+  { value: 3, suffix: "+", label: "Years of experience" },
 ];
 
 export const projects: Project[] = [

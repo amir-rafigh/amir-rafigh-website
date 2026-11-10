@@ -4,9 +4,12 @@ import { PortfolioAction } from "@/components/portfolio-action";
 import {
   ArrowUpRight,
   GitHubIcon,
+  InstagramIcon,
   LinkedInIcon,
   MailIcon,
+  PhoneIcon,
   ServiceIcon,
+  TelegramIcon,
 } from "@/components/portfolio-icons";
 import {
   profile,
@@ -118,6 +121,42 @@ export default function Home() {
             {technologies.map((technology) => <li key={technology}>{technology}</li>)}
           </ul>
         </div>
+        <div className="social-links">
+            <a
+              className="social-link"
+              href={profile.email ? "mailto:" + profile.email : "#contact"}
+              aria-label="Email"
+            >
+              <MailIcon />
+            </a>
+            <PortfolioAction
+              href={profile.githubUrl}
+              className="social-link social-github"
+              label={<GitHubIcon />}
+              accessibleLabel="GitHub profile"
+              title="GitHub"
+            >
+              <p>The GitHub profile will be linked when the demo content is updated.</p>
+            </PortfolioAction>
+            <PortfolioAction
+              href={profile.linkedinUrl}
+              className="social-link"
+              label={<LinkedInIcon />}
+              accessibleLabel="LinkedIn profile"
+              title="LinkedIn"
+            >
+              <p>The LinkedIn profile will be linked when the demo content is updated.</p>
+            </PortfolioAction>
+            <a className="social-link" href={profile.instagramUrl} aria-label="Instagram">
+              <InstagramIcon />
+            </a>
+            <a className="social-link" href={profile.telegramUrl} aria-label="Telegram">
+              <TelegramIcon />
+            </a>
+            <a className="social-link" href={"tel:" + profile.tel} aria-label={"Call " + profile.name}>
+              <PhoneIcon />
+            </a>
+          </div>
 
         <section className="container about" id="about" aria-labelledby="about-title">
           <ul className="service-list" aria-label="Services">
@@ -186,6 +225,15 @@ export default function Home() {
             >
               <p>The LinkedIn profile will be linked when the demo content is updated.</p>
             </PortfolioAction>
+            <a className="social-link" href={profile.instagramUrl} aria-label="Instagram">
+              <InstagramIcon />
+            </a>
+            <a className="social-link" href={profile.telegramUrl} aria-label="Telegram">
+              <TelegramIcon />
+            </a>
+            <a className="social-link" href={"tel:" + profile.tel} aria-label={"Call " + profile.name}>
+              <PhoneIcon />
+            </a>
           </div>
         </div>
       </footer>

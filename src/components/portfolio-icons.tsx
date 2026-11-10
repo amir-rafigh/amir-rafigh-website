@@ -93,3 +93,29 @@ export function LinkedInIcon() {
     </svg>
   );
 }
+
+export function InstagramIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function TelegramIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M21.9 4.1a1 1 0 0 0-1.2-.5L2.8 10.5c-.8.3-.8 1.4 0 1.7l4.7 1.5 2 5.6a.8.8 0 0 0 1.3.3l2.5-2.4 4.7 3.4a1 1 0 0 0 1.6-.6l2.6-15c.1-.3 0-.6-.3-.9ZM9.3 13.1l9.4-6.2-7.5 7.7-.6 2.9-1.3-4.4Z" />
+    </svg>
+  );
+}
+
+export function PhoneIcon() {
+  return (
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7.4 3H4.2C3.5 3 3 3.5 3 4.2 3 13.5 10.5 21 19.8 21c.7 0 1.2-.5 1.2-1.2v-3.2c0-.6-.4-1-.9-1.1l-3.7-.8c-.4-.1-.8 0-1 .3l-1.8 1.8a14 14 0 0 1-6.4-6.4L9 8.6c.3-.2.4-.6.3-1l-.8-3.7c-.1-.5-.5-.9-1.1-.9Z" />
+    </svg>
+  );
+}
