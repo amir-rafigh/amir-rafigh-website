@@ -1,69 +1,194 @@
 import Image from "next/image";
+import { ContactForm } from "@/components/contact-form";
+import { PortfolioAction } from "@/components/portfolio-action";
+import {
+  ArrowUpRight,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+  ServiceIcon,
+} from "@/components/portfolio-icons";
+import {
+  profile,
+  projects,
+  services,
+  statistics,
+  technologies,
+  type Project,
+} from "@/data/portfolio";
+
+const navigation = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contacts", href: "#contact" },
+];
+
+function ProjectTags({ items }: { items: string[] }) {
+  return (
+    <ul className="project-tags" aria-label="Technologies">
+      {items.map((item) => <li key={item}>{item}</li>)}
+    </ul>
+  );
+}
+
+function ProjectRow({ project }: { project: Project }) {
+  return (
+    <article className="project" aria-labelledby={project.id}>
+      <div className="project-copy">
+        <h3 id={project.id}>{project.title}</h3>
+        <ProjectTags items={project.technologies} />
+        <p className="body-copy">{project.description}</p>
+        <div className="project-actions">
+          <PortfolioAction
+            href={project.repositoryUrl}
+            className="button button-primary"
+            label="View GitHub"
+            accessibleLabel={"View GitHub for " + project.title}
+            title={project.title + " on GitHub"}
+          >
+            <p>The repository link will be available when this sample project is replaced.</p>
+          </PortfolioAction>
+          <PortfolioAction
+            href={project.demoUrl}
+            className="project-link"
+            label={<>View project <ArrowUpRight /></>}
+            accessibleLabel={"View project: " + project.title}
+            title={project.title}
+          >
+            <Image {...project.image} unoptimized className="dialog-preview" />
+            <ProjectTags items={project.technologies} />
+            <p>{project.description}</p>
+          </PortfolioAction>
+        </div>
+      </div>
+      <div className="project-media">
+        <Image {...project.image} unoptimized />
+      </div>
+    </article>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <header id="home" className="site-header">
+        <div className="container header-inner">
+          <a className="wordmark" href="#home">{profile.name}</a>
+          <nav className="site-nav" aria-label="Main navigation">
+            {navigation.map(({ href, label }) => <a href={href} key={href}>{label}</a>)}
+          </nav>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      <main id="main-content" tabIndex={-1}>
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="container hero-inner">
+            <div className="hero-copy">
+              <p className="hero-greeting">Hello<span>.</span></p>
+              <p className="line-label hero-intro">I’m {profile.firstName}</p>
+              <h1 id="hero-title">{profile.role}</h1>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#contact">Got a project?</a>
+                <PortfolioAction
+                  href={profile.resumeUrl}
+                  className="button button-outline"
+                  label="My resume"
+                  title={profile.name}
+                >
+                  <p className="resume-role">{profile.role} · Sample resume</p>
+                  <p>{profile.bio}</p>
+                  <ProjectTags items={technologies} />
+                </PortfolioAction>
+              </div>
+            </div>
+          </div>
+          <Image
+            {...profile.portrait}
+            className="hero-art"
+            fetchPriority="high"
+            loading="eager"
+            unoptimized
+          />
+        </section>
+
+        <div className="technology-strip">
+          <ul className="container technology-list" aria-label="Technology stack">
+            {technologies.map((technology) => <li key={technology}>{technology}</li>)}
+          </ul>
         </div>
+
+        <section className="container about" id="about" aria-labelledby="about-title">
+          <ul className="service-list" aria-label="Services">
+            {services.map(({ icon, label }) => (
+              <li key={icon}>
+                <ServiceIcon name={icon} />
+                <span>{label}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="about-copy">
+            <h2 id="about-title">About me</h2>
+            <p className="body-copy">{profile.bio}</p>
+            <dl className="statistics">
+              {statistics.map(({ value, suffix, label }) => (
+                <div className="statistic" key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}<span>{suffix}</span></dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <section className="container projects" id="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
+          <div className="project-list">
+            {projects.map((project) => <ProjectRow key={project.id} project={project} />)}
+          </div>
+        </section>
+
+        <section className="contact" id="contact" aria-labelledby="contact-title">
+          <div className="container">
+            <ContactForm />
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer className="site-footer">
+        <div className="container">
+          <a className="wordmark" href="#home">{profile.name}</a>
+          <p>Designed with love, all rights reserved for {profile.name}.</p>
+          <div className="social-links">
+            <a
+              className="social-link"
+              href={profile.email ? "mailto:" + profile.email : "#contact"}
+              aria-label="Email"
+            >
+              <MailIcon />
+            </a>
+            <PortfolioAction
+              href={profile.githubUrl}
+              className="social-link social-github"
+              label={<GitHubIcon />}
+              accessibleLabel="GitHub profile"
+              title="GitHub"
+            >
+              <p>The GitHub profile will be linked when the demo content is updated.</p>
+            </PortfolioAction>
+            <PortfolioAction
+              href={profile.linkedinUrl}
+              className="social-link"
+              label={<LinkedInIcon />}
+              accessibleLabel="LinkedIn profile"
+              title="LinkedIn"
+            >
+              <p>The LinkedIn profile will be linked when the demo content is updated.</p>
+            </PortfolioAction>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
