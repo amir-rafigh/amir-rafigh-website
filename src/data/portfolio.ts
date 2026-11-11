@@ -10,7 +10,7 @@ export type Project = {
   title: string;
   technologies: string[];
   description: string;
-  image: PortfolioImage;
+  image: PortfolioImage & { overlay?: PortfolioImage };
   repositoryUrl: string;
   demoUrl: string;
 };
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     title: "ROBOOLIFT",
     technologies: ["node.js", "tailwind", "postgresSQL", "TypeScript", "next.js"],
     description:
-      "Used components of JavaScript to implement basic data structures through the game of Battleship. Used a terminal to display ships and track where ships are hit or missed.",
+      "ROBOOLIFT is a web platform that helps project teams plan elevators and request engineering services. Its visual previews and preliminary calculations show what can fit in the available shaft and help estimate cabin size, capacity, and clearance requirements. Teams can develop a detailed design for a new or partially built installation, order a cabin, or submit existing drawings for engineering review.",
     image: {
       src: "/portfolio/roboolift-quick-design.webp",
       alt: "RobooLift Quick Design interface with an isometric elevator shaft beside the project inputs",
@@ -79,14 +79,20 @@ export const projects: Project[] = [
   },
   {
     id: "movie-titles-api",
-    title: "Movie Titles API",
-    technologies: ["HTML", "CSS", "JavaScript", "API", "Version control"],
-    description:      "ROBOOLIFT is a web platform that helps project teams plan elevators and request engineering services. Its visual previews and preliminary calculations show what can fit in the available shaft and help estimate cabin size, capacity, and clearance requirements. Teams can develop a detailed design for a new or partially built installation, order a cabin, or submit existing drawings for engineering review.",
+    title: "Online Cake Ordering ",
+    technologies: ["Typescript", "Next.js" ,"Tailwind" ],
+    description: "A Persian-language web app that guides customers through choosing and personalizing a cake for their event. Customers can browse and filter cake designs, specify the guest count, choose a color, and add a message. A visual preview and a summary let them review their selections.",
     image: {
-      src: "/portfolio/movie-titles-api.webp",
-      alt: "The Godfather and Top Gun: Maverick in the movie collection",
-      width: 371,
-      height: 184,
+      src: "/portfolio/cake-ordering-home.webp",
+      alt: "Persian cake ordering homepage featuring a tiered pink cake",
+      width: 345,
+      height: 751,
+      overlay: {
+        src: "/portfolio/cake-ordering-customization.webp",
+        alt: "Cake customization screen with guest count, color, and message options",
+        width: 346,
+        height: 752,
+      },
     },
     repositoryUrl: "",
     demoUrl: "",

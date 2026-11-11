@@ -523,6 +523,40 @@ section[id] {
   inset-inline: 0 auto;
 }
 
+.project--stacked .project-copy {
+  align-self: center;
+}
+
+.project--stacked .project-media {
+  width: min(100%, 352px);
+  justify-self: center;
+}
+
+.project-image-stack {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  width: min(100%, 340px);
+  margin-inline: auto;
+}
+
+.project-image-stack img {
+  grid-row: 1;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.project-image-base {
+  grid-column: 3 / 6;
+}
+
+.project-image-overlay {
+  z-index: 1;
+  grid-column: 1 / 4;
+  margin-block-start: 18px;
+  box-shadow: 5px 5px 18px #0b131c66;
+}
+
 .contact {
   margin-block-start: clamp(88px, 15.1vw, 186px);
   padding-block-end: clamp(56px, 6.45vw, 80px);

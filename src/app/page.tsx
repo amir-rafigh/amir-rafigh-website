@@ -35,9 +35,24 @@ function ProjectTags({ items }: { items: string[] }) {
   );
 }
 
+function ProjectPreview({ image, className }: { image: Project["image"]; className?: string }) {
+  const { overlay, alt, ...baseImage } = image;
+
+  if (!overlay) {
+    return <Image {...baseImage} alt={alt} unoptimized className={className} />;
+  }
+
+  return (
+    <div className="project-image-stack">
+      <Image {...baseImage} alt={alt} unoptimized className="project-image-base" />
+      <Image {...overlay} alt={overlay.alt} unoptimized className="project-image-overlay" />
+    </div>
+  );
+}
+
 function ProjectRow({ project }: { project: Project }) {
   return (
-    <article className="project" aria-labelledby={project.id}>
+    <article className={project.image.overlay ? "project project--stacked" : "project"} aria-labelledby={project.id}>
       <div className="project-copy">
         <h3 id={project.id}>{project.title}</h3>
         <ProjectTags items={project.technologies} />
@@ -59,14 +74,14 @@ function ProjectRow({ project }: { project: Project }) {
             accessibleLabel={"View project: " + project.title}
             title={project.title}
           >
-            <Image {...project.image} unoptimized className="dialog-preview" />
+            <ProjectPreview image={project.image} className="dialog-preview" />
             <ProjectTags items={project.technologies} />
             <p>{project.description}</p>
           </PortfolioAction>
         </div>
       </div>
       <div className="project-media">
-        <Image {...project.image} unoptimized />
+        <ProjectPreview image={project.image} />
       </div>
     </article>
   );
