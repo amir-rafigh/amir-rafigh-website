@@ -36,7 +36,22 @@ function ProjectTags({ items }: { items: string[] }) {
 }
 
 function ProjectPreview({ image, className }: { image: Project["image"]; className?: string }) {
-  const { overlay, alt, ...baseImage } = image;
+  const { overlay, companion, alt, ...baseImage } = image;
+
+  if (companion) {
+    const baseRatio = baseImage.width / baseImage.height;
+    const companionRatio = companion.width / companion.height;
+
+    return (
+      <div
+        className="project-image-pair"
+        style={{ gridTemplateColumns: `minmax(0, ${baseRatio}fr) minmax(0, ${companionRatio}fr)` }}
+      >
+        <Image {...baseImage} alt={alt} unoptimized />
+        <Image {...companion} alt={companion.alt} unoptimized />
+      </div>
+    );
+  }
 
   if (!overlay) {
     return <Image {...baseImage} alt={alt} unoptimized className={className} />;
@@ -51,33 +66,47 @@ function ProjectPreview({ image, className }: { image: Project["image"]; classNa
 }
 
 function ProjectRow({ project }: { project: Project }) {
+  let className = "project";
+  if (project.image.overlay) className += " project--stacked";
+  if (project.image.companion) className += " project--paired";
+
   return (
-    <article className={project.image.overlay ? "project project--stacked" : "project"} aria-labelledby={project.id}>
+    <article className={className} aria-labelledby={project.id}>
       <div className="project-copy">
         <h3 id={project.id}>{project.title}</h3>
         <ProjectTags items={project.technologies} />
         <p className="body-copy">{project.description}</p>
         <div className="project-actions">
-          <PortfolioAction
-            href={project.repositoryUrl}
-            className="button button-primary"
-            label="View GitHub"
-            accessibleLabel={"View GitHub for " + project.title}
-            title={project.title + " on GitHub"}
-          >
-            <p>The repository link will be available when this sample project is replaced.</p>
-          </PortfolioAction>
-          <PortfolioAction
-            href={project.demoUrl}
-            className="project-link"
-            label={<>View project <ArrowUpRight /></>}
-            accessibleLabel={"View project: " + project.title}
-            title={project.title}
-          >
-            <ProjectPreview image={project.image} className="dialog-preview" />
-            <ProjectTags items={project.technologies} />
-            <p>{project.description}</p>
-          </PortfolioAction>
+          {(!project.demoLinks?.length || project.repositoryUrl) && (
+            <PortfolioAction
+              href={project.repositoryUrl}
+              className="button button-primary"
+              label="View GitHub"
+              accessibleLabel={"View GitHub for " + project.title}
+              title={project.title + " on GitHub"}
+            >
+              <p>The repository link will be available when this sample project is replaced.</p>
+            </PortfolioAction>
+          )}
+          {project.demoLinks?.length ? (
+            project.demoLinks.map(({ label, href }) => (
+              <a key={href} className="project-link" href={href}>
+                {label} <ArrowUpRight />
+              </a>
+            ))
+          ) : (
+            <PortfolioAction
+              href={project.demoUrl}
+              className="project-link"
+              label={<>View project <ArrowUpRight /></>}
+              accessibleLabel={"View project: " + project.title}
+              title={project.title}
+            >
+              <ProjectPreview image={project.image} className="dialog-preview" />
+              <ProjectTags items={project.technologies} />
+              <p>{project.description}</p>
+            </PortfolioAction>
+          )}
         </div>
       </div>
       <div className="project-media">

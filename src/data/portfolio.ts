@@ -10,9 +10,10 @@ export type Project = {
   title: string;
   technologies: string[];
   description: string;
-  image: PortfolioImage & { overlay?: PortfolioImage };
+  image: PortfolioImage & { overlay?: PortfolioImage; companion?: PortfolioImage };
   repositoryUrl: string;
   demoUrl: string;
+  demoLinks?: { label: string; href: string }[];
 };
 
 // Replace these values and the images in public/portfolio with your own.
@@ -119,18 +120,28 @@ export const projects: Project[] = [
     demoUrl: "",
   },
   {
-    id: "saas-landing-page",
-    title: "SaaS Landing Page",
-    technologies: ["HTML", "CSS"],
+    id: "retail-landing-pages",
+    title: "Local Retail Landing Pages",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vite"],
     description:
-      "Used HTML concepts such as creating a form and a basic skeleton. It also used components of both grid and flexbox to produce a landing page.",
+      "Two Persian-language landing pages for Hammaktab Kitchen, a cookware shop, and Rafigh Sadeghi, a retailer of natural Sabalan honey. Each page introduces the shop and gives visitors quick access to phone contact, directions, and social media.",
     image: {
-      src: "/portfolio/saas-landing-page.webp",
-      alt: "Front landing page with the headline Empowering teams with the freedom",
-      width: 373,
-      height: 184,
+      src: "/portfolio/hammaktab-kitchen.webp",
+      alt: "Hammaktab Kitchen mobile landing page with cookware, directions, and contact links",
+      width: 342,
+      height: 747,
+      companion: {
+        src: "/portfolio/sabalan-honey.webp",
+        alt: "Rafigh Sadeghi mobile landing page with Sabalan honey, store details, and social links",
+        width: 314,
+        height: 754,
+      },
     },
     repositoryUrl: "",
     demoUrl: "",
+    demoLinks: [
+      { label: "Hammaktab Kitchen", href: "https://hammaktab-kitchen.ir/" },
+      { label: "Sabalan Honey", href: "https://asal-rafighsadeghi.ir/" },
+    ],
   },
 ];

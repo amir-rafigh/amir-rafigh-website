@@ -523,7 +523,8 @@ section[id] {
   inset-inline: 0 auto;
 }
 
-.project--stacked .project-copy {
+.project--stacked .project-copy,
+.project--paired .project-copy {
   align-self: center;
 }
 
@@ -555,6 +556,22 @@ section[id] {
   grid-column: 1 / 4;
   margin-block-start: 18px;
   box-shadow: 5px 5px 18px #0b131c66;
+}
+
+.project--paired .project-media {
+  width: min(100%, 400px);
+  justify-self: center;
+}
+
+.project-image-pair {
+  display: grid;
+  gap: clamp(8px, 2vw, 14px);
+}
+
+.project-image-pair img {
+  width: 100%;
+  border-radius: 10px;
+  outline: 1px solid var(--frame);
 }
 
 .contact {
