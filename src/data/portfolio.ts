@@ -117,7 +117,7 @@ export const projects: Project[] = [
       },
     },
     repositoryUrl: "",
-    demoUrl: "",
+    demoUrl: "https://kar-inja.vercel.app/",
   },
   {
     id: "retail-landing-pages",
