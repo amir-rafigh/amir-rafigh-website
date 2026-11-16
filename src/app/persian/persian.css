@@ -1,0 +1,51 @@
+html[lang="fa"] {
+  --body-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
+}
+
+html[lang="fa"] body {
+  line-height: 1.85;
+}
+
+html[lang="fa"] :is(.hero-greeting, .hero-intro, .hero h1, .about h2, .projects > h2, .project h3, .dialog-heading h2) {
+  letter-spacing: normal;
+  line-height: 1.6;
+}
+
+html[lang="fa"] .about-copy .body-copy {
+  letter-spacing: normal;
+  line-height: 2;
+}
+
+/* Keep the crop on the same part of the original photograph in both languages. */
+html[lang="fa"] .hero-portrait {
+  inset-inline: 0 auto;
+}
+
+html[lang="fa"] .project-media::before {
+  inset-inline: auto 0;
+}
+
+html[lang="fa"] .project:nth-child(even) .project-media::before {
+  inset-inline: 0 auto;
+}
+
+html[lang="fa"] .project-link svg {
+  transform: scaleX(-1);
+}
+
+html[lang="fa"] .statistic dt {
+  max-width: none;
+  line-height: 1.8;
+}
+
+html[lang="fa"] .contact-field {
+  line-height: 1.8;
+}
+
+html[lang="fa"] :is(.contact-field input, .contact-field textarea) {
+  line-height: 1.8;
+}
+
+html[lang="fa"] .skip-link {
+  inset-inline: 12px auto;
+}

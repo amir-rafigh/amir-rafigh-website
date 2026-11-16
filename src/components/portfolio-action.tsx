@@ -8,6 +8,7 @@ type PortfolioActionProps = {
   label: ReactNode;
   accessibleLabel?: string;
   title: string;
+  closeLabel: string;
   children: ReactNode;
 };
 
@@ -17,6 +18,7 @@ export function PortfolioAction({
   label,
   accessibleLabel,
   title,
+  closeLabel,
   children,
 }: PortfolioActionProps) {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -45,7 +47,7 @@ export function PortfolioAction({
         <div className="dialog-heading">
           <h2 id={titleId}>{title}</h2>
           <form method="dialog">
-            <button type="submit" className="dialog-close" aria-label="Close dialog">
+            <button type="submit" className="dialog-close" aria-label={closeLabel}>
               <span aria-hidden="true">×</span>
             </button>
           </form>

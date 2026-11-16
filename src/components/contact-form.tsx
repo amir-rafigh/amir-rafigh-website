@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import type { PortfolioCopy } from "@/data/portfolio-locales";
 
-export function ContactForm() {
+export function ContactForm({ copy }: { copy: PortfolioCopy }) {
   const [feedback, setFeedback] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -11,48 +12,49 @@ export function ContactForm() {
     const data = new FormData(form);
 
     if (!String(data.get("name")).trim() || !String(data.get("message")).trim()) {
-      setFeedback("Enter your name and a message.");
+      setFeedback(copy.requiredFeedback);
       return;
     }
 
     form.reset();
-    setFeedback("Demo submitted. This form is for preview only.");
+    setFeedback(copy.submittedFeedback);
   }
 
   return (
     <form className="contact-form" method="post" onSubmit={handleSubmit}>
       <div className="contact-pitch">
-        <p className="line-label">Contacts</p>
+        <p className="line-label">{copy.contact}</p>
         <h2 id="contact-title">
-          Have a project?
+          {copy.haveProject}
           <br />
-          Let’s talk!
+          {copy.letsTalk}
         </h2>
       </div>
 
       <div className="contact-fields">
         <label className="contact-field">
-          <span>Name</span>
+          <span>{copy.name}</span>
           <input name="name" autoComplete="name" maxLength={100} required />
         </label>
         <label className="contact-field">
-          <span>Email</span>
+          <span>{copy.email}</span>
           <input
             name="email"
             type="email"
+            dir="ltr"
             autoComplete="email"
             maxLength={254}
             required
           />
         </label>
         <label className="contact-field">
-          <span>Message</span>
+          <span>{copy.message}</span>
           <textarea name="message" rows={2} maxLength={2000} required />
         </label>
       </div>
 
       <div className="contact-action">
-        <button type="submit" className="button button-primary">Submit</button>
+        <button type="submit" className="button button-primary">{copy.submit}</button>
         <p className="form-status" role="status">{feedback}</p>
       </div>
     </form>

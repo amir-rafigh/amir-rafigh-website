@@ -79,6 +79,26 @@ export const projects: Project[] = [
     demoUrl: "https://roboolift.com",
   },
   {
+    id: "food-menus",
+    title: "Restaurant & Café Menus",
+    technologies: ["GSAP", "Node.js", "Tailwind CSS", "Next.js"],
+    description:
+      "Two Persian-language digital menus for Casa Italy and Gholivand Café. Customers can explore pizza, desserts, and drinks through category filters and visual carousels. Each menu has its own visual identity, with responsive layouts and animated transitions that make browsing feel natural on mobile.",
+    image: {
+      src: "/portfolio/food-menus.png",
+      alt: "Casa Italy's green pizza menu and Gholivand Café's black and red dessert menu side by side",
+      width: 1212,
+      height: 1297,
+    },
+    repositoryUrl: "",
+    demoUrl: "",
+    demoLinks: [
+     { label: "Casa Italy", href: "https://3d-menu-zea8.vercel.app/casaitaly" },
+     { label: "Gholivand Café", href: "https://3d-menu-zea8.vercel.app/baklava" },
+     
+    ],
+  },
+  {
     id: "movie-titles-api",
     title: "Online Cake Ordering ",
     technologies: ["Typescript", "Next.js" ,"Tailwind" ],
