@@ -114,7 +114,6 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
       <a className="skip-link" href="#main-content">{copy.skip}</a>
       <header id="home" className="site-header">
         <div className="container header-inner">
-          <a className="wordmark" href="#home">{profile.name}</a>
           <nav className="site-nav" aria-label={copy.navigation}>
             {navigation.map(({ href, label }) => <a href={href} key={href}>{label}</a>)}
             <a className="language-link" href={copy.languageHref} hrefLang={locale === "fa" ? "en" : "fa"} lang={locale === "fa" ? "en" : "fa"} aria-label={copy.languageLabel}>
@@ -128,8 +127,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
         <section className="hero" aria-labelledby="hero-title">
           <div className="container hero-inner">
             <div className="hero-copy">
-              <p className="hero-greeting">{copy.greeting}<span>.</span></p>
-              <p className="line-label hero-intro">{copy.intro} {profile.firstName}{locale === "fa" ? " هستم" : ""}</p>
+              <p className="line-label hero-intro">{profile.name}</p>
               <h1 id="hero-title">{profile.role}</h1>
               <div className="hero-actions">
                 <a className="button button-primary" href="#contact">{copy.projectPrompt}</a>

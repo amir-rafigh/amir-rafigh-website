@@ -101,7 +101,7 @@ export const projects: Project[] = [
   {
     id: "movie-titles-api",
     title: "Online Cake Ordering ",
-    technologies: ["Typescript", "Next.js" ,"Tailwind" ],
+    technologies: ["Typescript", "Next.js" ,"Tailwind", "React","Node.js" ],
     description: "A Persian-language web app that guides customers through choosing and personalizing a cake for their event. Customers can browse and filter cake designs, specify the guest count, choose a color, and add a message. A visual preview and a summary let them review their selections.",
     image: {
       src: "/portfolio/cake-ordering-home.webp",
