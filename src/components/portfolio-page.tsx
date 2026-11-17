@@ -164,6 +164,16 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           <div className="about-copy">
             <h2 id="about-title">{copy.aboutMe}</h2>
             <p className="body-copy">{profile.bio}</p>
+            <dl className="personal-details">
+              <div>
+                <dt>{copy.age}</dt>
+                <dd>{profile.age.toLocaleString(locale)} {copy.yearsOld}</dd>
+              </div>
+              <div>
+                <dt>{copy.degree}</dt>
+                <dd>{profile.degree}</dd>
+              </div>
+            </dl>
             <dl className="statistics">
               {statistics.map(({ value, suffix, label }) => (
                 <div className="statistic" key={label}>

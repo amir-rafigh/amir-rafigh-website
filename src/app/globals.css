@@ -357,6 +357,28 @@ section[id] {
   color: #e8eef0;
 }
 
+.personal-details {
+  display: grid;
+  gap: 12px;
+  margin-block-start: 20px;
+}
+
+.personal-details > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+}
+
+.personal-details dt {
+  color: var(--muted);
+}
+
+.personal-details dd {
+  margin: 0;
+  font-weight: 500;
+}
+
 .statistics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -9,6 +9,7 @@ export const portfolioCopy = {
     greeting: "Hello", intro: "I’m", projectPrompt: "Got a project?", resume: "My resume",
     sampleResume: "Sample resume", technologyStack: "Technology stack", services: "Services",
     aboutMe: "About me", viewProject: "View project",
+    age: "Age", yearsOld: "years old", degree: "Education",
     projectFor: "View project:",
     githubNotice: "The GitHub profile will be linked when the demo content is updated.",
     linkedinNotice: "The LinkedIn profile will be linked when the demo content is updated.",
@@ -36,6 +37,7 @@ export const portfolioCopy = {
     greeting: "سلام", intro: "من", projectPrompt: "پروژه‌ای دارید؟", resume: "رزومه من",
     sampleResume: "پیش‌نمایش رزومه", technologyStack: "فناوری‌های مورد استفاده", services: "خدمات",
     aboutMe: "درباره من", viewProject: "مشاهده پروژه",
+    age: "سن", yearsOld: "سال", degree: "مدرک تحصیلی",
     projectFor: "مشاهدهٔ پروژهٔ",
     githubNotice: "پس از به‌روزرسانی محتوای نمونه، پیوند پروفایل گیت‌هاب اضافه می‌شود.",
     linkedinNotice: "پس از به‌روزرسانی محتوای نمونه، پیوند پروفایل لینکدین اضافه می‌شود.",
@@ -66,6 +68,7 @@ export const persianProfile = {
   name: "امیر رفیق",
   firstName: "امیر",
   role: "مهندس نرم‌افزار",
+  degree: "کارشناسی مهندسی کامپیوتر",
   bio: "من مهندس نرم‌افزار هستم و به طراحی و ساخت برنامه‌های تحت وب مقیاس‌پذیر، کارآمد و کاربرمحور علاقه دارم. با استفاده از اصول مهندسی و تفکر سیستمی ایده‌های پیچیده را به راهکارهای دیجیتال و قابل اعتماد تبدیل می‌کنم.",
   portrait: { ...profile.portrait, alt: "امیر رفیق با عینک آفتابی در کنار دریا" },
 };
@@ -87,7 +90,7 @@ const projectTranslations: Record<string, ProjectTranslation> = {
     overlayAlt: "صفحهٔ رزرو اتاق جلسه با گزینه‌های انتخاب تاریخ و ساعت شروع",
     demoLabels: ["آدرس وب", " آدرس ادمین پنل"],
   },
-  battleship: {
+  roboolift: {
     title: "روبولیفت (ROBOOLIFT)",
     description: "روبولیفت یک پلتفرم تحت وب است که به تیم‌های پروژه در طراحی آسانسور و درخواست خدمات مهندسی کمک می‌کند. پیش‌نمایش‌های بصری و محاسبات اولیهٔ آن نشان می‌دهند چه آسانسوری در فضای چاه موجود قابل اجراست و به برآورد ابعاد کابین، ظرفیت و فواصل ایمنی مورد نیاز کمک می‌کنند. تیم‌ها می‌توانند برای نصب جدید یا پروژهٔ نیمه‌ساخته، طراحی تفصیلی تهیه کنند، کابین سفارش دهند یا نقشه‌های موجود را برای بررسی مهندسی ارسال کنند.",
     alt: "رابط طراحی سریع روبولیفت با نمای ایزومتریک چاه آسانسور در کنار ورودی‌های پروژه",

@@ -22,6 +22,8 @@ export const profile = {
   name: "Amir Rafigh",
   firstName: "Amir",
   role: "Software Engineer",
+  age: 27,
+  degree: "Bachelor’s degree in Computer Engineering",
   bio: "I'm a Software Engineer passionate about designing and building scalable, efficient, and user-focused web applications, turning complex ideas into reliable digital solutions.",
   portrait: {
     src: "/photo_2026-11-11_00-16-20.jpg",
