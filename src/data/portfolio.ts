@@ -64,6 +64,31 @@ export const statistics = [
 
 export const projects: Project[] = [
   {
+    id: "shared-workspace-app",
+    title: "Coworking Reservations & Events",
+    technologies: ["Next.js · React · TypeScript · Tailwind CSS · PostgreSQL · Prisma"],
+    description:
+     "A Persian-language web app for a coworking space. Customers can check desk and meeting room availability, submit and track reservation requests, and register for events or join a waitlist. Staff review requests in a separate dashboard, and the system assigns an available desk or room on approval while preventing double bookings.",
+    image: {
+      src: "/portfolio/coworking-home.webp",
+      alt: "Persian coworking homepage showing a meeting room and a shared desk",
+      width: 347,
+      height: 754,
+      overlay: {
+        src: "/portfolio/coworking-room-reservation.webp",
+        alt: "Meeting room reservation screen with date and start time options",
+        width: 347,
+        height: 752,
+      },
+    },
+    repositoryUrl: "",
+    demoUrl: "",
+    demoLinks: [
+      { label: "web address", href: "https://kar-inja.vercel.app/" },
+      { label: "admin address", href: "https://kar-inja-t777h.vercel.app/admin" },
+    ],
+  },
+  {
     id: "battleship",
     title: "ROBOOLIFT",
     technologies: ["node.js", "tailwind", "postgresSQL", "TypeScript", "next.js"],
@@ -83,7 +108,7 @@ export const projects: Project[] = [
     title: "Restaurant & Café Menus",
     technologies: ["GSAP", "Node.js", "Tailwind CSS", "Next.js"],
     description:
-      "Two Persian-language digital menus for Casa Italy and Gholivand Café. Customers can explore pizza, desserts, and drinks through category filters and visual carousels. Each menu has its own visual identity, with responsive layouts and animated transitions that make browsing feel natural on mobile.",
+    "Two Persian-language digital menus for Casa Italy and Gholivand Café. Customers can explore pizza, desserts, and drinks through category filters and visual carousels. Each menu has its own visual identity, with responsive layouts and animated transitions that make browsing feel natural on mobile.",
     image: {
       src: "/portfolio/food-menus.png",
       alt: "Casa Italy's green pizza menu and Gholivand Café's black and red dessert menu side by side",
@@ -99,7 +124,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "movie-titles-api",
+    id: "cake-ordering-app",
     title: "Online Cake Ordering ",
     technologies: ["Typescript", "Next.js" ,"Tailwind", "React","Node.js" ],
     description: "A Persian-language web app that guides customers through choosing and personalizing a cake for their event. Customers can browse and filter cake designs, specify the guest count, choose a color, and add a message. A visual preview and a summary let them review their selections.",
@@ -117,27 +142,6 @@ export const projects: Project[] = [
     },
     repositoryUrl: "",
     demoUrl: "https://cake-custom.vercel.app/",
-  },
-  {
-    id: "javascript-calculator",
-    title: "Coworking Reservations & Events",
-    technologies: ["Next.js · React · TypeScript · Tailwind CSS · PostgreSQL · Prisma"],
-    description:
-     "A Persian-language web app for a coworking space. Customers can check desk and meeting room availability, submit and track reservation requests, and register for events or join a waitlist. Staff review requests in a separate dashboard, and the system assigns an available desk or room on approval while preventing double bookings.",
-    image: {
-      src: "/portfolio/coworking-home.webp",
-      alt: "Persian coworking homepage showing a meeting room and a shared desk",
-      width: 347,
-      height: 754,
-      overlay: {
-        src: "/portfolio/coworking-room-reservation.webp",
-        alt: "Meeting room reservation screen with date and start time options",
-        width: 347,
-        height: 752,
-      },
-    },
-    repositoryUrl: "",
-    demoUrl: "https://kar-inja.vercel.app/",
   },
   {
     id: "retail-landing-pages",
