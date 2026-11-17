@@ -75,7 +75,7 @@ export const projects: Project[] = [
       width: 347,
       height: 754,
       overlay: {
-        src: "/portfolio/coworking-room-reservation.webp",
+        src: "/portfolio/coworking-room-reservation.png",
         alt: "Meeting room reservation screen with date and start time options",
         width: 347,
         height: 752,
