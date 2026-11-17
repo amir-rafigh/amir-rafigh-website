@@ -114,7 +114,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "battleship",
+    id: "roboolift",
     title: "ROBOOLIFT",
     technologies: ["node.js", "tailwind", "postgresSQL", "TypeScript", "next.js"],
     description:

@@ -58,18 +58,6 @@ function ProjectRow({ project, copy }: { project: Project; copy: PortfolioCopy }
         <ProjectTags items={project.technologies} label={copy.technologies} />
         <p className="body-copy">{project.description}</p>
         <div className="project-actions">
-          {(!project.demoLinks?.length || project.repositoryUrl) && (
-            <PortfolioAction
-              href={project.repositoryUrl}
-              className="button button-primary"
-              label={copy.github}
-              accessibleLabel={copy.githubFor + " " + project.title}
-              title={project.title + " " + copy.onGithub}
-              closeLabel={copy.close}
-            >
-              <p>{copy.repositoryNotice}</p>
-            </PortfolioAction>
-          )}
           {project.demoLinks?.length ? (
             project.demoLinks.map(({ label, href }) => (
               <a key={href} className="project-link" href={href}>
