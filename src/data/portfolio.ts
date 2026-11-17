@@ -89,6 +89,31 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "retail-landing-pages",
+    title: "Local Retail Landing Pages",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vite"],
+    description:
+      "Two Persian-language landing pages for Hammaktab Kitchen, a cookware shop, and Rafigh Sadeghi, a retailer of natural Sabalan honey. Each page introduces the shop and gives visitors quick access to phone contact, directions, and social media.",
+    image: {
+      src: "/portfolio/hammaktab-kitchen.webp",
+      alt: "Hammaktab Kitchen mobile landing page with cookware, directions, and contact links",
+      width: 342,
+      height: 747,
+      companion: {
+        src: "/portfolio/sabalan-honey.webp",
+        alt: "Rafigh Sadeghi mobile landing page with Sabalan honey, store details, and social links",
+        width: 314,
+        height: 754,
+      },
+    },
+    repositoryUrl: "",
+    demoUrl: "",
+    demoLinks: [
+      { label: "Hammaktab Kitchen", href: "https://hammaktab-kitchen.ir/" },
+      { label: "Sabalan Honey", href: "https://asal-rafighsadeghi.ir/" },
+    ],
+  },
+  {
     id: "battleship",
     title: "ROBOOLIFT",
     technologies: ["node.js", "tailwind", "postgresSQL", "TypeScript", "next.js"],
@@ -97,8 +122,10 @@ export const projects: Project[] = [
     image: {
       src: "/portfolio/roboolift-quick-design.webp",
       alt: "RobooLift Quick Design interface with an isometric elevator shaft beside the project inputs",
+      
       width: 1376,
       height: 769,
+      
     },
     repositoryUrl: "",
     demoUrl: "https://roboolift.com",
@@ -142,30 +169,5 @@ export const projects: Project[] = [
     },
     repositoryUrl: "",
     demoUrl: "https://cake-custom.vercel.app/",
-  },
-  {
-    id: "retail-landing-pages",
-    title: "Local Retail Landing Pages",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vite"],
-    description:
-      "Two Persian-language landing pages for Hammaktab Kitchen, a cookware shop, and Rafigh Sadeghi, a retailer of natural Sabalan honey. Each page introduces the shop and gives visitors quick access to phone contact, directions, and social media.",
-    image: {
-      src: "/portfolio/hammaktab-kitchen.webp",
-      alt: "Hammaktab Kitchen mobile landing page with cookware, directions, and contact links",
-      width: 342,
-      height: 747,
-      companion: {
-        src: "/portfolio/sabalan-honey.webp",
-        alt: "Rafigh Sadeghi mobile landing page with Sabalan honey, store details, and social links",
-        width: 314,
-        height: 754,
-      },
-    },
-    repositoryUrl: "",
-    demoUrl: "",
-    demoLinks: [
-      { label: "Hammaktab Kitchen", href: "https://hammaktab-kitchen.ir/" },
-      { label: "Sabalan Honey", href: "https://asal-rafighsadeghi.ir/" },
-    ],
   },
 ];
