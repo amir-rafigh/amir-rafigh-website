@@ -120,7 +120,7 @@ export const projects: Project[] = [
     title: "ROBOOLIFT",
     technologies: ["node.js", "tailwind", "postgresSQL", "TypeScript", "next.js"],
     description:
-      "ROBOOLIFT is a web platform that helps project teams plan elevators and request engineering services. Its visual previews and preliminary calculations show what can fit in the available shaft and help estimate cabin size, capacity, and clearance requirements. Teams can develop a detailed design for a new or partially built installation, order a cabin, or submit existing drawings for engineering review.",
+      "ROBOOLIFT is a web platform that helps project teams plan elevators and request engineering services. Its visual previews and preliminary calculations show what can fit in the available shaft and help estimate cabin size, capacity, and clearance requirements. Teams can receive drawings and technical specifications tailored to their project's shaft dimensions and conditions, order a cabin, or submit existing drawings for engineering review.",
     image: {
       src: "/portfolio/roboolift-quick-design.webp",
       alt: "RobooLift Quick Design interface with an isometric elevator shaft beside the project inputs",
