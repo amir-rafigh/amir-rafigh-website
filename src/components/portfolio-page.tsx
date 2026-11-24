@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ContactSection, QuickContactLinks, SocialLinks } from "@/components/contact-links";
 import { PortfolioAction } from "@/components/portfolio-action";
+import { ProjectQrLink } from "@/components/project-qr-link";
 import {
   ArrowUpRight,
   ServiceIcon,
@@ -50,6 +51,9 @@ function ProjectRow({ project, copy }: { project: Project; copy: PortfolioCopy }
   let className = "project";
   if (project.image.overlay) className += " project--stacked";
   if (project.image.companion) className += " project--paired";
+  const links = project.demoLinks?.length
+    ? project.demoLinks
+    : project.demoUrl ? [{ label: copy.viewProject, href: project.demoUrl }] : [];
 
   return (
     <article className={className} aria-labelledby={project.id}>
@@ -58,12 +62,21 @@ function ProjectRow({ project, copy }: { project: Project; copy: PortfolioCopy }
         <ProjectTags items={project.technologies} label={copy.technologies} />
         <p className="body-copy">{project.description}</p>
         <div className="project-actions">
-          {project.demoLinks?.length ? (
-            project.demoLinks.map(({ label, href }) => (
-              <a key={href} className="project-link" href={href}>
-                {label} <ArrowUpRight />
-              </a>
-            ))
+          {links.length ? (
+            <div className="project-access">
+              <p className="project-access-hint">{copy.scanProject}</p>
+              <div className="project-qr-links">
+                {links.map(({ label, href }) => (
+                  <ProjectQrLink
+                    key={href}
+                    href={href}
+                    label={label}
+                    projectTitle={project.title}
+                    qrLabel={copy.qrCode}
+                  />
+                ))}
+              </div>
+            </div>
           ) : (
             <PortfolioAction
               href={project.demoUrl}

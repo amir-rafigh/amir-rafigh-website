@@ -489,6 +489,76 @@ section[id] {
   gap: clamp(16px, 2.9vw, 36px);
   margin-block-start: auto;
   padding-block-start: 24px;
+  width: 100%;
+}
+
+.project-access {
+  width: min(100%, 340px);
+}
+
+.project-access-hint {
+  margin-block-end: 12px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.project-qr-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.project-qr-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 148px;
+  max-width: 100%;
+  padding: 9px;
+  border: 1px solid var(--frame);
+  border-radius: 12px;
+  background: var(--strip);
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.project-qr-link:hover,
+.project-qr-link:focus-visible {
+  border-color: var(--accent-rule);
+  background: var(--pill);
+}
+
+.project-qr-image {
+  width: 128px;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.project-qr-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.project-qr-title svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+html[dir="rtl"] .project-qr-title svg {
+  transform: scaleX(-1);
 }
 
 .project-link {
@@ -1189,6 +1259,16 @@ html[dir="rtl"] :is(.social-link > svg:nth-of-type(2), .contact-card-action > sv
 }
 
 @media (max-width: 540px) {
+  .project-qr-links {
+    gap: 10px;
+  }
+
+  .project-qr-link {
+    width: calc((100% - 10px) / 2);
+    max-width: 148px;
+    padding: 7px;
+  }
+
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
