@@ -60,7 +60,7 @@ export const services = [
 ] as const;
 
 export const statistics = [
-  { value: 5, suffix: "+", label: "Completed Projects" },
+  { value: 6, suffix: "+", label: "Completed Projects" },
   { value: 3, suffix: "+", label: "Years of experience" },
 ];
 
@@ -150,6 +150,31 @@ export const projects: Project[] = [
      { label: "Casa Italy", href: "https://3d-menu-zea8.vercel.app/casaitaly" },
      { label: "Gholivand Café", href: "https://3d-menu-zea8.vercel.app/baklava" },
      
+    ],
+  },
+  {
+    id: "qeytran-restaurant",
+    title: "Qeytran Restaurant — Website & Digital Menu",
+    technologies: ["Next.js", "React"],
+    description:
+      "A Persian-language restaurant website that pairs a welcoming landing page with an interactive digital menu. Guests can explore food categories, browse dish photography, and view ingredients, prices, portion sizes, and preparation times. The cream and burgundy palette carries the restaurant’s identity across both pages, with responsive, right-to-left layouts designed for easy browsing on mobile.",
+    image: {
+      src: "/portfolio/qeytran-landing.png",
+      alt: "Qeytran Restaurant mobile landing page with cream and burgundy typography and a Persian kebab platter",
+      width: 347,
+      height: 761,
+      companion: {
+        src: "/portfolio/qeytran-menu.png",
+        alt: "Qeytran digital menu with food categories, a Soltani kebab platter, ingredients, and pricing",
+        width: 351,
+        height: 753,
+      },
+    },
+    repositoryUrl: "",
+    demoUrl: "",
+    demoLinks: [
+      { label: "Restaurant website", href: "https://3d-menu-zea8.vercel.app/qeytran/landing" },
+      { label: "Digital menu", href: "https://3d-menu-zea8.vercel.app/qeytran" },
     ],
   },
   {
