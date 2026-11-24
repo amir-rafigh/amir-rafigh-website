@@ -507,7 +507,7 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  gap: 12px;
+  gap: 32px;
 }
 
 .project-qr-link {
@@ -1260,11 +1260,11 @@ html[dir="rtl"] :is(.social-link > svg:nth-of-type(2), .contact-card-action > sv
 
 @media (max-width: 540px) {
   .project-qr-links {
-    gap: 10px;
+    gap: 24px;
   }
 
   .project-qr-link {
-    width: calc((100% - 10px) / 2);
+    width: max(144px, calc((100% - 24px) / 2));
     max-width: 148px;
     padding: 7px;
   }
